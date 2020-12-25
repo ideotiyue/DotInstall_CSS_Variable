@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet"  href="css/styles.css">
+  <title>CSS変数</title>
+</head>
+<body>
+  <h1>複数の要素で使いたい場合</h1>
+  <p>
+    CSS 変数は継承されるプロパティのため共通の親要素で指定する必要がある。<br>
+    :rootはよく使われる記法。
+  </p>
+  <img src="../img/root.png" width="600px">
+
+  <h2>注意点①</h2>
+  <p>
+    CSS 変数はプロパティの値に使える。プロパティ名のほうには使うことはできない。<br>
+    たとえば :root で --my-property: color; と宣言したあとに、<br>
+    h1 の color を var(--my-property) で置き換えようとしても、うまくいかない。</p>
+
+  <h2>注意点②</h2>
+  <p>
+    CSS 変数では、あとから単位を追加することはできない。
+    たとえば、 :root で --my-margin-left: 32; と宣言したあとに、<br>
+    h1 でmargin-left に対して、 var() 関数を使って --my-margin-left を入れた場合、単位がつけられずうまく動かない。<br>
+    単位を指定したい場合は<br>
+    ①宣言時につける<br>
+    ②CSS の calc() 関数を使う
+  </p>
+  <img src="../img/calc.png" width="600px">
+</body>
+</html>
